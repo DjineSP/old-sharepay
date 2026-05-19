@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="refresh" content="10;url=https://sharepay.te-sea.com" />
+  <title>SharePay — Nouvelle adresse</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        hsl(208, 50%, 8%);
+      --card:      hsl(208, 50%, 11%);
+      --border:    hsl(208, 30%, 18%);
+      --primary:   hsl(163, 70%, 45%);
+      --primary-d: hsl(163, 70%, 38%);
+      --text:      hsl(210, 40%, 98%);
+      --muted:     hsl(215, 20%, 55%);
+      --radius:    0.75rem;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1rem;
+    }
+
+    /* ── Card ── */
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 1.25rem;
+      padding: 3rem 2.5rem 2.5rem;
+      max-width: 480px;
+      width: 100%;
+      text-align: center;
+    }
+
+    /* ── Logo ── */
+    .logo-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: .6rem;
+      margin-bottom: 2.25rem;
+    }
+    .logo-wrap svg { width: 38px; height: auto; }
+    .logo-name {
+      font-size: 1.45rem;
+      font-weight: 800;
+      letter-spacing: -.03em;
+      color: var(--text);
+    }
+    .logo-name span { color: var(--primary); }
+
+    /* ── Badge ── */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      background: hsl(163, 70%, 45%, .12);
+      color: var(--primary);
+      border: 1px solid hsl(163, 70%, 45%, .25);
+      font-size: .75rem;
+      font-weight: 600;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+      padding: .3rem .85rem;
+      border-radius: 99px;
+      margin-bottom: 1.5rem;
+    }
+    .badge-dot {
+      width: 6px; height: 6px;
+      background: var(--primary);
+      border-radius: 50%;
+      animation: pulse 1.8s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50%       { opacity: .4; transform: scale(.7); }
+    }
+
+    /* ── Heading ── */
+    h1 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      line-height: 1.3;
+      color: var(--text);
+      margin-bottom: .75rem;
+    }
+    .subtitle {
+      color: var(--muted);
+      font-size: .95rem;
+      line-height: 1.7;
+      margin-bottom: 2rem;
+    }
+
+    /* ── Progress ── */
+    .progress-label {
+      font-size: .82rem;
+      color: var(--muted);
+      margin-bottom: .5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .countdown-num { color: var(--primary); font-weight: 600; }
+    .progress-track {
+      background: var(--border);
+      border-radius: 99px;
+      height: 5px;
+      overflow: hidden;
+      margin-bottom: 2rem;
+    }
+    .progress-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, var(--primary-d), var(--primary));
+      border-radius: 99px;
+      animation: grow 10s linear forwards;
+    }
+    @keyframes grow { to { width: 100%; } }
+
+    /* ── Button ── */
+    .btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: .5rem;
+      width: 100%;
+      background: var(--primary);
+      color: #fff;
+      font-size: .95rem;
+      font-weight: 600;
+      padding: .9rem 1.5rem;
+      border-radius: var(--radius);
+      text-decoration: none;
+      transition: background .15s, transform .1s, box-shadow .15s;
+      margin-bottom: 1rem;
+    }
+    .btn:hover {
+      background: var(--primary-d);
+      transform: translateY(-1px);
+      box-shadow: 0 8px 24px hsl(163, 70%, 45%, .25);
+    }
+    .btn svg { transition: transform .15s; }
+    .btn:hover svg { transform: translateX(3px); }
+
+    .hint {
+      font-size: .82rem;
+      color: var(--muted);
+    }
+    .hint a { color: var(--primary); text-decoration: none; }
+    .hint a:hover { text-decoration: underline; }
+
+    /* ── Divider ── */
+    hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 1.75rem 0;
+    }
+
+    /* ── Steps ── */
+    .steps { list-style: none; text-align: left; }
+    .steps li {
+      display: flex;
+      gap: .75rem;
+      padding: .65rem 0;
+      font-size: .875rem;
+      color: var(--muted);
+      border-bottom: 1px solid hsl(208, 30%, 14%);
+      line-height: 1.5;
+    }
+    .steps li:last-child { border-bottom: none; }
+    .step-icon { flex-shrink: 0; font-size: 1rem; margin-top: .05rem; }
+
+    /* ── Footer ── */
+    footer {
+      margin-top: 2rem;
+      font-size: .78rem;
+      color: hsl(215, 20%, 35%);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+
+    <!-- Logo -->
+    <div class="logo-wrap">
+      <img src="logo_sharepay.svg" alt="SharePay logo" width="38" height="40" />
+      <span class="logo-name">Share<span>Pay</span></span>
+    </div>
+
+    <!-- Badge -->
+    <div class="badge">
+      <span class="badge-dot"></span>
+      Nouvelle adresse
+    </div>
+
+    <!-- Heading -->
+    <h1>Notre plateforme a déménagé</h1>
+    <p class="subtitle">
+      SharePay est désormais accessible à une nouvelle adresse.
+      Vous serez redirigé automatiquement dans quelques instants.
+    </p>
+
+    <!-- Countdown + progress -->
+    <div class="progress-label">
+      <span>Redirection automatique…</span>
+      <span class="countdown-num" id="cd">10s</span>
+    </div>
+    <div class="progress-track">
+      <div class="progress-fill"></div>
+    </div>
+
+    <!-- CTA -->
+    <a class="btn" href="https://sharepay.te-sea.com">
+      Accéder à SharePay
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M5 12h14M12 5l7 7-7 7"/>
+      </svg>
+    </a>
+
+    <p class="hint">
+      Si la redirection ne fonctionne pas,
+      <a href="https://sharepay.te-sea.com">cliquez ici</a>.
+    </p>
+
+    <hr />
+
+    <ul class="steps">
+      <li>
+        <span class="step-icon">🔖</span>
+        Mettez à jour vos favoris avec la nouvelle adresse <strong style="color:hsl(210,40%,85%)">sharepay.te-sea.com</strong>.
+      </li>
+      <li>
+        <span class="step-icon">🔑</span>
+        Vous devrez vous reconnecter une seule fois sur la nouvelle adresse.
+      </li>
+      <li>
+        <span class="step-icon">💬</span>
+        En cas de problème, contactez le support depuis la plateforme.
+      </li>
+    </ul>
+
+  </div>
+
+  <footer>© 2026 SharePay · sharepay.te-sea.com</footer>
+
+  <script>
+    let s = 10;
+    const el = document.getElementById("cd");
+    const t = setInterval(() => {
+      s--;
+      el.textContent = s + "s";
+      if (s <= 0) { clearInterval(t); window.location.href = "https://sharepay.te-sea.com"; }
+    }, 1000);
+  </script>
+
+</body>
+</html>
